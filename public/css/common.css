@@ -1,7 +1,12 @@
 .mt1{margin-top: 1rem;}
+.mt2{margin-top: 2rem;}
+
 .mb1{margin-bottom: 1rem;}
 
-
+.btn-primary{
+    background-color: #37474f !important;
+    border-color: #37474f !important;
+}
 
 .right-screen{
     padding: 0 1rem;
@@ -15,10 +20,17 @@
     border-top: 1px solid;
     border-radius: 0.3rem .3rem 0 .0rem;
 }
-
 .box-header{
-    margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: bold;
     color: #444;
+}
+.box-body{
+    margin-top: 1rem;
+    display: none;
+    transition: all 0.5s ease;
+}
+.box-open{
+    transition: 1s;
+    display: block;
 }

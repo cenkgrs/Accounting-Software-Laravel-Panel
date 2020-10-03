@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Products;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Schema;
 use App\Http\Models\Product;
 
 class ProductsController extends Controller
@@ -34,6 +35,8 @@ class ProductsController extends Controller
 
             return view('products.index', $data);
         }   
+
+        $data['columns'] = Schema::getColumnListing('products');
 
         $data['products'] = Product::get();
 

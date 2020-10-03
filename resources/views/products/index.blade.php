@@ -12,24 +12,17 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Code</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Firm</th>
+                        @foreach($columns as $column)
+                            <th scope="col"> {{ ucwords($column) }}</th>
+                        @endforeach
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($products as $product)
                         <tr>
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->code }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->price }}</td>
-                            <td>{{ $product->category_id }}</td>
-                            <td>{{ $product->firm_id }}</td>
-
+                            @foreach($columns as $column)
+                                <td>{{ $product->$column }}</td>
+                            @endforeach
                         </tr>
                     @endforeach
                 </tbody>
