@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-Route::get('/products', 'Products\ProductsController@index')->name('products');
+Route::match(['GET', 'POST'], '/products', 'Products\ProductsController@index')->name('products');
 
 
