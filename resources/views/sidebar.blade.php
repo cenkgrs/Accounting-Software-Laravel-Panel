@@ -12,16 +12,11 @@
                 <li>
                     <a href="{{ route('products') }}"><i class="fab fa-product-hunt"></i> Products</a>
                 </li>
-            </ul>
-        </div>
-        <div class="sidebar-body">
-            <ul class="sidebar-list">
                 <li>
-                    <i class="fas fa-money-bill-wave"></i> Prices
+                    <a href="{{ route('products') }}"><i class="fas fa-money-bill-wave"></i> Prices</a>
                 </li>
             </ul>
         </div>
-        
     </div>
 
 </div>

@@ -3,12 +3,15 @@
 @include('header')
 <body>  
 
+
 <div class="row">
     <div class="col-lg-2">
         @include('sidebar')
     </div>
     <div class="col-lg-9">
-        @yield('content')
+        <div class="right-screen">
+            @yield('content')
+        </div>
     </div>
 </div>
 

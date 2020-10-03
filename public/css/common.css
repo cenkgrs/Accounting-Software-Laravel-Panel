@@ -4,6 +4,10 @@
 
 .filter{
     margin: 2rem 0;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     box-shadow: 0 0 1px 0 #666666;
+}
+.right-screen{
+    padding: 0 1rem;
+    margin: auto;
 }
