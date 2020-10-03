@@ -1,8 +1,8 @@
 <div id="viewport">
     <!-- Sidebar -->
     <div class="sidebar">
-        <div class="sidebar-header">
-            <a href="/">Accounting Panel</a>
+        <div class="sidebar-header sidebar-opener">
+            Accounting Panel
         </div>
         <div class="sidebar-body">
             <ul class="sidebar-list">
