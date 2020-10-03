@@ -7,7 +7,7 @@
     <div class="col-lg-2">
         @include('sidebar')
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-9">
         @yield('content')
     </div>
 </div>

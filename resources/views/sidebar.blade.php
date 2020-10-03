@@ -2,7 +2,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
-            Accounting Panel
+            <a href="/">Accounting Panel</a>
         </div>
         <div class="sidebar-body">
             <ul class="sidebar-list">
