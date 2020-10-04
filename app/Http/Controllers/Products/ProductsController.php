@@ -38,7 +38,7 @@ class ProductsController extends Controller
 
         $data['columns'] = Schema::getColumnListing('products');
 
-        $data['products'] = Product::get();
+        $data['products'] = Product::paginate(5);
 
         return view('products.index', $data);
 
