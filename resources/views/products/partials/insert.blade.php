@@ -11,19 +11,19 @@
                     <div class="row">
                         <div class="col-md-2 col-xs-12">
                             <label for="code">Product Code</label>
-                            <input name="code" type="text" id="code" class="form-control">
+                            <input name="code" type="text" class="form-control">
                         </div>
                         <div class="col-md-2 col-xs-12">
                             <label for="name">Product Name</label>
-                            <input name="name" type="text" id="name" class="form-control">
+                            <input name="name" type="text" class="form-control">
                         </div>
                         <div class="col-md-2 col-xs-12">
                             <label for="price">Product Price</label>
-                            <input name="price" type="text" id="price" class="form-control">
+                            <input name="price" type="text" class="form-control">
                         </div>
                         <div class="col-md-2 col-xs-12">
                             <label for="category">Category</label>
-                            <select name="category_id" id="category" class="form-control">
+                            <select name="category_id" class="form-control">
                                 @foreach(range(1, 10) as $i)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endforeach
@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-2 col-xs-12">
                             <label for="firm">Firm</label>
-                            <select name="firm_id" id="firm" class="form-control">
+                            <select name="firm_id" class="form-control">
                                 @foreach(range(1, 10) as $i)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endforeach

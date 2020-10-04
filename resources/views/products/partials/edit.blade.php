@@ -9,7 +9,10 @@
       </button>
     </div>
     <div class="modal-body">
-      <form action="">
+      <form action="" method="POST">
+        {{ csrf_field() }}
+        <input type="hidden" name="operation" value="update">
+        <input type="hidden" name="id" id="product_id">
         <div class="col-md-4 col-xs-12">
             <label for="code">Product Code</label>
             <input name="code" type="text" id="code" class="form-control">
@@ -22,12 +25,14 @@
             <label for="price">Product Price</label>
             <input name="price" type="text" id="price" class="form-control">
         </div>
+        <div class="col-md-12 col-xs-12 mt1">
+          <input type="submit" class="btn btn-primary btn-block" value="Update">
+        </div>
       </form>
     </div>
 
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
     </div>
   </div>
 </div>

@@ -31,7 +31,7 @@
                                     <td>{{ $product->$column }}</td>
                                 @endforeach
                                 <td>
-                                    <button type="button" name="edit" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">
+                                    <button type="button" name="edit" data-product="{{ $product }}" class="btn btn-secondary edit-button" data-toggle="modal" data-target="#editModal">
                                         <i class="fas fa-edit"></i>
                                     </button>
                                     <button type="submit" name="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> 
@@ -49,5 +49,18 @@
 
 @include('products.partials.edit')
 
+
+<script>
+    $(document).ready(function() {
+        $(".edit-button").on('click', function(){
+            var product = $(this).data('product');
+            $("#code").val(product['code']);
+            $("#name").val(product['name']);
+            $("#price").val(product['price']);
+            $("#product_id").val(product['id']);
+        })
+    });
+
+</script>
 
 @endsection

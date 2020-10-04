@@ -10,6 +10,8 @@ use App\Http\Models\Product;
 
 class ProductsController extends Controller
 {
+    public $timestamps = false;
+    
     public function index(Request $request){
 
         if($request->isMethod('post')){
@@ -51,6 +53,14 @@ class ProductsController extends Controller
 
             if($operation == 'delete'){
                 Product::where('id', $input['id'])->delete();
+            }
+
+            if($operation == 'update'){
+                Product::where('id', $input['id'])->update([
+                    'code'          => $input['code'],
+                    'name'          => $input['name'],
+                    'price'         => $input['price']
+                ]);
             }
 
          
