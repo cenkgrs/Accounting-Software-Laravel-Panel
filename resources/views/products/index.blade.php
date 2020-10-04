@@ -21,15 +21,20 @@
                 </thead>
                 <tbody>
                     @foreach($products as $product)
-                        <tr>
-                            @foreach($columns as $column)
-                                <td>{{ $product->$column }}</td>
-                            @endforeach
-                            <td>
-                                <button class="btn btn-secondary "><i class="fas fa-edit"></i>Edit</button>
-                                <button class="btn btn-danger "><i class="fas fa-trash-alt"></i>Delete</button>
-                            </td>
-                        </tr>
+                        <form action="" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="operation" value="delete">
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <tr>
+                                @foreach($columns as $column)
+                                    <td>{{ $product->$column }}</td>
+                                @endforeach
+                                <td>
+                                    <button type="button" name="edit" class="btn btn-secondary "><i class="fas fa-edit"></i></button>
+                                    <button type="submit" name="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> 
+                                </td>
+                            </tr>
+                        </form>
                     @endforeach
                 </tbody>
             </table>

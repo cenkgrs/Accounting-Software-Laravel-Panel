@@ -14,31 +14,51 @@ class ProductsController extends Controller
 
         if($request->isMethod('post')){
             $input = $request->all();
+            $operation = $input['operation'];
 
-            $data['products'] = Product::where(function ($q) use ($input) {
-                if(isset($input['id']) && $input['id']){
-                    $q->where('id', $input['id']);
-                }
-                if(isset($input['code']) && $input['code']){
-                    $q->where('code', $input['code']);
-                }
-                if(isset($input['name']) && $input['name']){
-                    $q->where('name', $input['name']);
-                }
-                if(isset($input['category_id']) && $input['category_id']){
-                    $q->where('category_id', $input['category_id']);
-                }
-                if(isset($input['firm_id']) && $input['firm_id']){
-                    $q->where('firm_id', $input['firm_id']);
-                }
-            })->get();
+            if($operation == 'filter'){
+                $data['products'] = Product::where(function ($q) use ($input) {
+                    if(isset($input['id']) && $input['id']){
+                        $q->where('id', $input['id']);
+                    }
+                    if(isset($input['code']) && $input['code']){
+                        $q->where('code', $input['code']);
+                    }
+                    if(isset($input['name']) && $input['name']){
+                        $q->where('name', $input['name']);
+                    }
+                    if(isset($input['category_id']) && $input['category_id']){
+                        $q->where('category_id', $input['category_id']);
+                    }
+                    if(isset($input['firm_id']) && $input['firm_id']){
+                        $q->where('firm_id', $input['firm_id']);
+                    }
+                })->get();
 
-            return view('products.index', $data);
+                return view('products.index', $data);
+
+            }
+
+            if($operation == 'insert'){
+                Product::insert([
+                    'code'          => $input['code'],
+                    'name'          => $input['name'],
+                    'price'         => $input['price'],
+                    'category_id'   => $input['category_id'],
+                    'firm_id'       => $input['firm_id']
+                ]);
+            }
+
+            if($operation == 'delete'){
+                Product::where('id', $input['id'])->delete();
+            }
+
+         
         }   
 
         $data['columns'] = Schema::getColumnListing('products');
 
-        $data['products'] = Product::paginate(5);
+        $data['products'] = Product::paginate(9);
 
         return view('products.index', $data);
 

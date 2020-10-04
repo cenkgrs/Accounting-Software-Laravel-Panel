@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::match(['GET', 'POST'], '/products', 'Products\ProductsController@index')->name('products');
+Route::match(['GET', 'POST'], '/bookşngs', 'Bookings\BookingsController@index')->name('bookings');
 
 

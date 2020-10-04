@@ -7,7 +7,7 @@
         <div class="sidebar-body">
             <ul class="sidebar-list">
                 <li>
-                    <i class="fas fa-shopping-basket"></i> Tickets
+                    <a href="{{ route('bookings') }}"><i class="fas fa-shopping-basket"></i> Bookings</a>
                 </li>
                 <li>
                     <a href="{{ route('products') }}"><i class="fab fa-product-hunt"></i> Products</a>

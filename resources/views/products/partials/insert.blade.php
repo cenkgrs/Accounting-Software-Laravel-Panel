@@ -7,6 +7,7 @@
             <div class="col-lg-12 col-xs-12">
                 <form action="" method="POST">
                 {{ csrf_field() }}
+                <input type="hidden" name="operation" value="insert">
                     <div class="row">
                         <div class="col-md-2 col-xs-12">
                             <label for="code">Product Code</label>
@@ -17,10 +18,13 @@
                             <input name="name" type="text" id="name" class="form-control">
                         </div>
                         <div class="col-md-2 col-xs-12">
+                            <label for="price">Product Price</label>
+                            <input name="price" type="text" id="price" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-xs-12">
                             <label for="category">Category</label>
                             <select name="category_id" id="category" class="form-control">
-                                <option value="0" selected>All</option>
-                                @foreach(range(0, 10) as $i)
+                                @foreach(range(1, 10) as $i)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endforeach
                             </select>
@@ -28,9 +32,9 @@
                         <div class="col-md-2 col-xs-12">
                             <label for="firm">Firm</label>
                             <select name="firm_id" id="firm" class="form-control">
-                                <option value="0">All</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                                @foreach(range(1, 10) as $i)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-2 col-xs-12 mt2">
