@@ -7,6 +7,7 @@
 @include('products.partials.insert')
 
 
+
 <div class="row">
     <div class="col-lg-12 col-xs-12 ">
         <div class="table-responsive">
@@ -30,7 +31,9 @@
                                     <td>{{ $product->$column }}</td>
                                 @endforeach
                                 <td>
-                                    <button type="button" name="edit" class="btn btn-secondary "><i class="fas fa-edit"></i></button>
+                                    <button type="button" name="edit" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
                                     <button type="submit" name="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> 
                                 </td>
                             </tr>
@@ -43,6 +46,8 @@
         </div>
     </div>
 </div>
+
+@include('products.partials.edit')
 
 
 @endsection
