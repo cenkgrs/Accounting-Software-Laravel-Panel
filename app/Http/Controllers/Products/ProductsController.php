@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Schema;
 use App\Http\Models\Product;
+use App\Http\Models\Categories;
 
 class ProductsController extends Controller
 {
-    public $timestamps = false;
     
     public function index(Request $request){
 
@@ -68,7 +68,7 @@ class ProductsController extends Controller
 
         $data['columns'] = Schema::getColumnListing('products');
 
-        $data['products'] = Product::paginate(9);
+        $data['products'] = Product::with('Categories')->paginate(9);
 
         return view('products.index', $data);
 

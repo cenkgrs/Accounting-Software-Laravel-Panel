@@ -27,9 +27,13 @@
                             <input type="hidden" name="operation" value="delete">
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <tr>
-                                @foreach($columns as $column)
-                                    <td>{{ $product->$column }}</td>
-                                @endforeach
+                              
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->code }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->Categories['name'] }}</td>
+                                <td>{{ $product->firm_id }}</td>
                                 <td>
                                     <button type="button" name="edit" data-product="{{ $product }}" class="btn btn-secondary edit-button" data-toggle="modal" data-target="#editModal">
                                         <i class="fas fa-edit"></i>
