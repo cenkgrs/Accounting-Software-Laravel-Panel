@@ -3,17 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\Product;
 
 class PagesController extends Controller
 {
     public function dashboard(){
-        $data["stocks"] = [
-            "fruit"         => ["name" => "Fruit Stock", "quantity" => 50, "unit" => "kg"],
-            "drink"         => ["name" => "Drink Stock", "quantity" => 10, "unit" => "lt"],
-            "meal"          => ["name" => "Meal Stock", "quantity" => 95, "unit" => "piece"],
-            "vegetables"    => ["name" => "Vegetable Stock", "quantity" => 10, "unit" => "kg"],
-        ];
-
+   
+        $data['stocks'] = Product::with('categories')->groupBy('category_id') ->selectRaw('*, sum(quantity) as sum')->get();
 
         return view('home.index', $data);
     }

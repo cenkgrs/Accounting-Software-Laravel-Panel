@@ -13,10 +13,10 @@
                 <div class="col-lg-3 col-xs-3">
                     <div class="showcase">
                         <div class="showcase-header">
-                            {{ $stock['name'] }}
+                            {{ $stock->categories['name'] }}
                         </div>
                         <div class="showcase-body">
-                            {{ $stock['quantity'] }} {{ $stock['unit'] }}
+                            {{ $stock['sum'] }} {{ $stock['unit'] }}
                         </div>
                     </div>
                 </div>

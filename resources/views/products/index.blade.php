@@ -32,6 +32,8 @@
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->code }}</td>
                                 <td>{{ $product->price }}</td>
+                                <td>{{ $product->quantity }}</td>
+                                <td>{{ $product->unit }}</td>
                                 <td>{{ $product->Categories['name'] }}</td>
                                 <td>{{ $product->firm_id }}</td>
                                 <td>
