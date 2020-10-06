@@ -16,7 +16,10 @@
                             {{ $stock->categories['name'] }}
                         </div>
                         <div class="showcase-body">
-                            {{ $stock['sum'] }} {{ $stock['unit'] }}
+                            <span>
+                                {{ $stock['sum'] }}
+                            </span>
+                            {{ $stock['unit'] }}
                         </div>
                     </div>
                 </div>
@@ -24,5 +27,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('.showcase-body span').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    })
+    
+</script>
     
 @endsection
