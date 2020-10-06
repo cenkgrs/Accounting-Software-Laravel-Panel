@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('/dashboard', 'PagesController@dashboard')->name('dashboard');
 Route::match(['GET', 'POST'], '/products', 'Products\ProductsController@index')->name('products');
 Route::match(['GET', 'POST'], '/bookings', 'Bookings\BookingsController@index')->name('bookings');
 
