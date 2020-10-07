@@ -18,6 +18,10 @@
                 <li>
                     <a href="{{ route('products') }}"><i class="fas fa-money-bill-wave"></i> Prices</a>
                 </li>
+                <li>
+                    <a href="{{ route('logout') }}"> Logout</a>
+                </li>
+
             </ul>
         </div>
     </div>

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Auth Routes //
 Route::match(['GET', 'POST'], 'login', 'Auth\UserController@login')->name('login');
-Route::post('logout', 'Auth\UserController@logout')->name('logout');
+Route::match(['GET', 'POST'], 'logout', 'Auth\UserController@logout')->name('logout');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'PagesController@dashboard')->name('dashboard');
