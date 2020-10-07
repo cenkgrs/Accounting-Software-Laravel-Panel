@@ -89,3 +89,12 @@ li i{margin-right: 1rem;}
     background-color: #dc3545;
     color: whitesmoke;
 }
+
+/* login Page */
+
+
+.login-form{
+    margin: 20vh 30vh;
+    padding: 5rem 3rem;
+    box-shadow: 0 0 2px 0 #6666;
+}
