@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@dashboard')->name('dashboard');
 Route::get('/dashboard', 'PagesController@dashboard')->name('dashboard');
 Route::match(['GET', 'POST'], '/products', 'Products\ProductsController@index')->name('products');
-Route::match(['GET', 'POST'], '/bookings', 'Bookings\BookingsController@index')->name('bookings');
+Route::match(['GET', 'POST'], '/bookings', 'Products\BookingsController@index')->name('bookings');
 
 
