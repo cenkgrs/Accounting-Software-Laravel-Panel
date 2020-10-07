@@ -11,7 +11,7 @@
             </div>
             @foreach($stocks as $stock)
                 <div class="col-lg-3 col-xs-3">
-                    <div class="showcase">
+                    <div class="showcase @if($stock['sum'] < $stock_alerts[$stock['unit']]) showcase-danger @endif">
                         <div class="showcase-header">
                             {{ $stock->categories['name'] }}
                         </div>
