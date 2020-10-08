@@ -8,18 +8,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use App\Http\Models\Product;
 use App\Http\Models\Categories;
+use App\Http\Models\Firms;
 
 class ProductsController extends Controller
 {
     
     public function index(Request $request){
 
+        $data['firms'] = Firms::get();
+        $data['categories'] = Categories::get();
+        $data['columns'] = Schema::getColumnListing('products');
+
         if($request->isMethod('post')){
             $input = $request->all();
             $operation = $input['operation'];
 
             if($operation == 'filter'){
-                $data['products'] = Product::where(function ($q) use ($input) {
+                $data['products'] = Product::with('Categories')->where(function ($q) use ($input) {
                     if(isset($input['id']) && $input['id']){
                         $q->where('id', $input['id']);
                     }
@@ -35,7 +40,7 @@ class ProductsController extends Controller
                     if(isset($input['firm_id']) && $input['firm_id']){
                         $q->where('firm_id', $input['firm_id']);
                     }
-                })->get();
+                })->paginate(10);
 
                 return view('products.index', $data);
 
@@ -66,9 +71,7 @@ class ProductsController extends Controller
          
         }   
 
-        $data['columns'] = Schema::getColumnListing('products');
-
-        $data['products'] = Product::with('Categories')->paginate(9);
+        $data['products'] = Product::with('Categories', 'Firm')->paginate(10);
 
         return view('products.index', $data);
 

@@ -33,7 +33,7 @@
                                 <td>{{ $product->quantity }}</td>
                                 <td>{{ $product->unit }}</td>
                                 <td>{{ $product->Categories['name'] }}</td>
-                                <td>{{ $product->firm_id }}</td>
+                                <td>{{ $product->Firm['name'] }}</td>
                                 <td>
                                     <button type="button" name="edit" data-product="{{ $product }}" class="btn btn-secondary edit-button" data-toggle="modal" data-target="#editModal">
                                         <i class="fas fa-edit"></i>

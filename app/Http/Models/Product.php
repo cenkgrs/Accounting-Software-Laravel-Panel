@@ -13,4 +13,8 @@ class Product extends Model
         return $this->belongsTo('App\Http\Models\Categories' , 'category_id');
     }
 
+    public function Firm(){
+        return $this->belongsTo('App\Http\Models\Firms' , 'firm_id');
+    }
+
 }

@@ -25,8 +25,8 @@
                             <label for="category">Category</label>
                             <select name="category_id" class="form-control">
                                 <option value="0" selected>All</option>
-                                @foreach(range(1, 10) as $i)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -34,8 +34,8 @@
                             <label for="firm">Firm</label>
                             <select name="firm_id" class="form-control">
                                 <option value="0">All</option>
-                                @foreach(range(1, 10) as $i)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @foreach($firms as $firm)
+                                    <option value="{{ $firm->id }}">{{ $firm->name }}</option>
                                 @endforeach
                             </select>
                         </div>
