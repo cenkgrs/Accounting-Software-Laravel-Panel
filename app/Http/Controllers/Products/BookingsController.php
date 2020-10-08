@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Http\Models\Bookings;
+use App\Http\Models\Categories;
+use App\Http\Models\Firms;
 
 class BookingsController extends Controller
 {
@@ -14,7 +16,7 @@ class BookingsController extends Controller
 
         $data['columns'] = Schema::getColumnListing('bookings');
 
-        $data['bookings'] = Bookings::with('Product')->paginate(10);
+        $data['bookings'] = Bookings::with('Product.Categories', 'Product.Firm')->paginate(10);
 
         return view('bookings.index', $data);
     }
